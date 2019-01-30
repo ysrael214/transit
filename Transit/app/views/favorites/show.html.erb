@@ -4,6 +4,9 @@
   <strong>Name:</strong>
   <%= @favorite.name %>
 </p>
+<div class="container">
+  <h4>Belongs to commuter: <%= @favorite.commuter.name %></h4>
+</div>
 
 <%= link_to 'Edit', edit_favorite_path(@favorite) %> |
 <%= link_to 'Back', favorites_path %>
