@@ -15,6 +15,8 @@ class FavoritesController < ApplicationController
   # GET /favorites/new
   def new
     @favorite = Favorite.new
+    # to be seen in new.html.erb
+    @commuters = Commuter.all
   end
 
   # GET /favorites/1/edit
@@ -25,7 +27,6 @@ class FavoritesController < ApplicationController
   # POST /favorites.json
   def create
     @favorite = Favorite.new(favorite_params)
-
     respond_to do |format|
       if @favorite.save
         format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
@@ -69,6 +70,6 @@ class FavoritesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_params
-      params.require(:favorite).permit(:name)
+      params.require(:favorite).permit(:name, :commuter_id)
     end
 end
