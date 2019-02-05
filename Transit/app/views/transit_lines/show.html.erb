@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @transit_line.status %>
+</p>
+
+<p>
+  <strong>Operating hours:</strong>
+  <%= @transit_line.operating_hours %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @transit_line.type %>
+</p>
+
+<p>
+  <strong>Restrictions:</strong>
+  <%= @transit_line.restrictions %>
+</p>
+
+<p>
+  <strong>Reliability:</strong>
+  <%= @transit_line.reliability %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @transit_line.name %>
+</p>
+
+<p>
+  <strong>Avg price:</strong>
+  <%= @transit_line.avg_price %>
+</p>
+
+<%= link_to 'Edit', edit_transit_line_path(@transit_line) %> |
+<%= link_to 'Back', transit_lines_path %>
