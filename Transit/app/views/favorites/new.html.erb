@@ -1,15 +1,18 @@
-<h1>New Favorite</h1>
 
-<%= render 'form', favorite: @favorite %>
-<table class="table">
-  <th>Commuter ID</th>
-  <th>Commuter Name</th>
-  <% @commuters.each do |commuter| %>
-  <tr>
-    <td><%= commuter.id %></td>
-    <td><%= commuter.name %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="container">
+	<h1>New Favorite</h1>
 
-<%= link_to 'Back', favorites_path %>
+	<%= render 'form', favorite: @favorite %>
+	<table class="table w-100">
+	  <th>Commuter ID</th>
+	  <th>Commuter Name</th>
+	  <% @commuters.each do |commuter| %>
+	  <tr>
+	    <td><%= commuter.id %></td>
+	    <td><%= commuter.name %></td>
+	  </tr>
+	  <% end %>
+	</table>
+
+	<%= link_to 'Back', favorites_path %>
+</div>
