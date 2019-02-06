@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2019_02_06_085910) do
     t.string "password_digest"
   end
 
+  create_table "departure_times", force: :cascade do |t|
+    t.integer "lines_stops_id"
+    t.string "departure_time"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -31,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_085910) do
   create_table "lines_stops", force: :cascade do |t|
     t.integer "transit_line_id"
     t.integer "transit_stop_id"
+    t.integer "stop_number"
   end
 
   create_table "transit_lines", force: :cascade do |t|
