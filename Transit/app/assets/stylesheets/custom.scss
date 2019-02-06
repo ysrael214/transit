@@ -1,2 +1,76 @@
+/*
+
+This Bootstrap is outdated
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+.site-container{
+	height: 100vh;
+}
+
+.site-content{
+	min-height: 75vh;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Montserrat';
+	font-weight: 800;
+}
+
+.container{
+	transition: 0.15s ease-in-out;
+}
+
+ul{
+	list-style: none;
+}
+
+ul li{
+	padding: 1rem 3rem;
+
+}
+
+
+/* */
+
+.transit-navbar{
+	border-bottom: 1px solid #ddd;
+	position: fixed;
+	background-color: white;
+	z-index: 9999;
+}
+
+.transit-navbar-header-padding{
+	height: 83px;
+}
+
+.transit-icon{
+	color: black;	
+}
+
+
+.transit-footer{
+	min-height: 100px;
+	height: 25vh;
+	border-top: 1px solid #ddd;
+	background-color: #eee;
+}
+
+
+.transit-active{
+	color: #f5a623 !important;
+}
+
+/* Media */
+
+@media (min-width: 2560px){
+	.container{
+		max-width: 1440px;
+	}
+}

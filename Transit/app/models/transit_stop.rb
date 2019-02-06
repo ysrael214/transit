@@ -1,0 +1,2 @@
+class TransitStop < ApplicationRecord
+end

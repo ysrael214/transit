@@ -1,0 +1,2 @@
+class TransitLine < ApplicationRecord
+end
