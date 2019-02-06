@@ -7,3 +7,10 @@ Soft Tabs (use spaces as tabs)
 
 # Application Stack
 Ruby on Rails Framework
+
+# Code Review - Code History Format
+<Version Number> - <Date MM/DD/YY> - <Name> - <1 sentence description>
+  ex.
+  1.0 - 02/07/19 - Sean - First new file
+  1.1 - 02/08/19 - Menard - Front end!
+  2.0 - 02/08/19 - Michael - Put licenses and polished code
