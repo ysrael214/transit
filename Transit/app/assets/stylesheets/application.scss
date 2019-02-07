@@ -20,15 +20,11 @@
 
  .site-container{
  	height: 100vh;
+ 	font-family:'Open Sans', sans-serif;
  }
 
  .site-content{
  	min-height: 75vh;
- }
-
- h1, h2, h3, h4, h5, h6{
- 	font-family: 'Montserrat';
- 	font-weight: 800;
  }
 
  .container{
@@ -72,6 +68,8 @@
  	color: #f5a623 !important;
  }
 
+
+
  /* Media */
 
  @media (min-width: 2560px){
@@ -81,3 +79,23 @@
  }
 
  @import "bootstrap";
+
+a {
+  color: #666 ;
+  text-decoration: none;
+
+  &:hover, &:visited:hover {
+    color: #f5a623;
+    text-decoration: none;
+    transition: 0.1s;
+  }
+
+  &:visited {
+    color: #888;
+  }
+}
+
+ h1, h2, h3, h4, h5, h6{
+ 	font-family: 'Montserrat';
+ 	font-weight: 800;
+ }

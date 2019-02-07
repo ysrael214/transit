@@ -1,15 +1,15 @@
 <nav class="navbar w-100 transit-navbar">
-	<div class="d-flex p-2 w-100">
-		<div class="container m-auto d-flex">
-			<a class="transit-icon my-auto" href="<%=  root_path %>" > <h3>TRANSIT</h3> </a>
+  <div class="d-flex p-2 w-100">
+    <div class="container m-auto d-flex">
+      <a class="transit-icon my-auto" href="<%=  root_path %>" > <h3>TRANSIT</h3> </a>
 
-			<ul class="d-flex ml-auto my-auto">
-			    <li><%= link_to "Home", root_path %></li>
-			    <li><%= link_to "Favorites", '/favorites' %></li>
+      <ul class="d-flex ml-auto my-auto">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Favorites", '/favorites' %></li>
           <li><%= link_to "Transit Lines", transit_lines_path %></li>
-			</ul>
+      </ul>
 
-		</div>
-	</div>
+    </div>
+  </div>
 </nav>
 <div class="transit-navbar-header-padding"></div>
