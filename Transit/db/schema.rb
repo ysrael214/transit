@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_015131) do
+ActiveRecord::Schema.define(version: 2019_02_07_080253) do
 
   create_table "commuters", force: :cascade do |t|
     t.string "name"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2019_02_07_015131) do
   end
 
   create_table "departure_times", force: :cascade do |t|
-    t.integer "lines_stops_id"
+    t.integer "transit_lines_transit_stops_id"
     t.string "departure_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -41,16 +43,16 @@ ActiveRecord::Schema.define(version: 2019_02_07_015131) do
   create_table "transit_lines", force: :cascade do |t|
     t.string "status"
     t.string "operating_hours"
-    t.string "type"
     t.string "restrictions"
     t.integer "reliability"
     t.string "name"
     t.float "avg_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind"
   end
 
-  create_table "transit_lines_transit_stops", force: :cascade do |t|
+  create_table "transit_lines_stops", force: :cascade do |t|
     t.integer "transit_line_id"
     t.integer "transit_stop_id"
     t.integer "stop_number"
@@ -58,12 +60,12 @@ ActiveRecord::Schema.define(version: 2019_02_07_015131) do
 
   create_table "transit_stops", force: :cascade do |t|
     t.string "name"
-    t.string "type"
     t.string "status"
-    t.string "longitude"
-    t.string "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "kind"
   end
 
 end

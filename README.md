@@ -17,3 +17,10 @@ Ruby on Rails Framework
   1.1 - 02/08/19 - Menard - Front end!
 
   2.0 - 02/08/19 - Michael - Put licenses and polished code
+
+# Setting Up Rails Server
+`rails db:drop`
+
+execute: `rails db:schema:load`
+
+`rails db:seed`
