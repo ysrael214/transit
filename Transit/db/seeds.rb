@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# List of Commuters
+Commuters.create(name: "Menard", email: "mmcruz@gmail.com", password: "password")
+
+# List of Transit Lines
+TransitLines.create(name: "Five Star", type: "Bus")
+
+# List of Favorites
