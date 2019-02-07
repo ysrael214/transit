@@ -1,34 +1,31 @@
-<!-- # License
-# This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo
-# of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2015-2016
-
-# Code History
-# 1.0 - 2/5/2019 - Sean Chan - Initial File
-# 2.0 - 2/7/2019 - Menard Cruz - Initial Frontend layouting
-# 3.0 - 2/7/2019 - Sean Chan - ERB fixes
--->
+<%= content_for :title, @favorite.name %>
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @favorite.name %>
-</p>
 <div class="container">
-  <h4>Belongs to commuter: <%= @favorite.commuter.name %></h4>
-</div>
+  <p>
+    <strong>Name:</strong>
+    <%= @favorite.name %>
+  </p>
 
-<div class="container">
+  <h2>List of Transit Lines</h2>
+  <!--  STUB ! TODO - Menard -->
+
+
+  <h4>Belongs to commuter: <%= @favorite.commuter.name %></h4>
+
+
+
   <h4>List of Transit Lines Under Favorite <%= @favorite.name %></h4>
   <table class="table">
     <thead>
       <tr>
+        <th>Name</th>
         <th>Status</th>
         <th>Operating hours</th>
         <th>Type</th>
         <th>Restrictions</th>
         <th>Reliability</th>
-        <th>Name</th>
         <th>Avg price</th>
         <th colspan="3"></th>
       </tr>
@@ -37,12 +34,12 @@
     <tbody>
       <% @favorite.transit_lines.each do |transit_line| %>
       <tr>
+        <td><%= transit_line.name %></td>
         <td><%= transit_line.status %></td>
         <td><%= transit_line.operating_hours %></td>
         <td><%= transit_line.kind %></td>
         <td><%= transit_line.restrictions %></td>
         <td><%= transit_line.reliability %></td>
-        <td><%= transit_line.name %></td>
         <td><%= transit_line.avg_price %></td>
         <td><%= link_to 'Show', transit_line %></td>
         <td><%= link_to 'Edit', edit_transit_line_path(transit_line) %></td>
@@ -51,7 +48,8 @@
       <% end %>
     </tbody>
   </table>
+  <%= link_to 'Edit', edit_favorite_path(@favorite) %> |
+  <%= link_to 'Back', favorites_path %>
+
 </div>
 
-<%= link_to 'Edit', edit_favorite_path(@favorite) %> |
-<%= link_to 'Back', favorites_path %>

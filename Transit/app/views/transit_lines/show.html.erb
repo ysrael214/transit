@@ -1,50 +1,43 @@
-<!-- # License
-# This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo
-# of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2015-2016
+<%= content_for :title, @transit_line.name %>
 
-# Code History
-# 1.0 - 2/5/2019 - Sean Chan - Initial File
-# 2.0 - 2/7/2019 - Menard Cruz - Initial Frontend layouting
-# 3.0 - 2/7/2019 - Sean Chan - ERB fixes
--->
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @transit_line.status %>
-</p>
-
-<p>
-  <strong>Operating hours:</strong>
-  <%= @transit_line.operating_hours %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @transit_line.kind %>
-</p>
-
-<p>
-  <strong>Restrictions:</strong>
-  <%= @transit_line.restrictions %>
-</p>
-
-<p>
-  <strong>Reliability:</strong>
-  <%= @transit_line.reliability %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @transit_line.name %>
-</p>
-
-<p>
-  <strong>Avg price:</strong>
-  <%= @transit_line.avg_price %>
-</p>
 <div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <h1><%= @transit_line.name %></h1>
+
+  <div class="p-3">
+    <p>
+      <strong>Status:</strong>
+      <%= @transit_line.status %>
+    </p>
+
+    <p>
+      <strong>Operating hours:</strong>
+      <%= @transit_line.operating_hours %>
+    </p>
+
+    <p>
+      <strong>Type:</strong>
+      <%= @transit_line.kind %>
+    </p>
+
+    <p>
+      <strong>Restrictions:</strong>
+      <%= @transit_line.restrictions %>
+    </p>
+
+    <p>
+      <strong>Reliability:</strong>
+      <%= @transit_line.reliability %>
+    </p>
+
+    <p>
+      <strong>Avg price:</strong>
+      <%= @transit_line.avg_price %>
+    </p>
+  </div>
+
   <h4>List of Transit Stops Under <%= @transit_line.name %></h4>
   <table class="table">
     <thead>
@@ -73,8 +66,10 @@
       <% end %>
     </tbody>
   </table>
+
+
+
+  <%= link_to 'Edit', edit_transit_line_path(@transit_line) %> |
+  <%= link_to 'Back', transit_lines_path %>
+
 </div>
-
-
-<%= link_to 'Edit', edit_transit_line_path(@transit_line) %> |
-<%= link_to 'Back', transit_lines_path %>
