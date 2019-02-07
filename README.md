@@ -21,6 +21,8 @@ Ruby on Rails Framework
 # Setting Up Rails Server
 `rails db:drop`
 
-execute: `rails db:schema:load`
+`rails db:schema:load`
 
 `rails db:seed`
+
+`rails s`
