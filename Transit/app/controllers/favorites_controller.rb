@@ -1,3 +1,17 @@
+  # License
+  # This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo
+  # of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2018-2019
+
+  # Code History
+  # 1.0 - 2/5/2019 - Sean Chan - Initial File
+  # 1.1 - 2/7/2019 - Michael Marrero - Edited Comments, Added Comment block for detailed information regarding the software.
+
+  # File Creation Date: 2/5/2019
+  # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
+  # Client Group: UP Student Dormers
+  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their 
+  #   permanent residence of the routes and methods from their current location. Being on a budget, students are more inclined to cheaper options in favor of comfort or travel time.
+
 class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
@@ -9,10 +23,12 @@ class FavoritesController < ApplicationController
 
   # GET /favorites/1
   # GET /favorites/1.json
+  # Should show the Favorite New Group's information, along with the transit lines associated with it.
   def show
   end
 
   # GET /favorites/new
+  # Creation of a new Favorite Route Group. Shows the list of commuters and within the database too.
   def new
     @favorite = Favorite.new
     # to be seen in new.html.erb
@@ -20,11 +36,13 @@ class FavoritesController < ApplicationController
   end
 
   # GET /favorites/1/edit
+  # Editing a Favorite Route Group's Transit Lines that are associated with it, its name, and to whom the Favorite Route Group is deicated to.
   def edit
   end
 
   # POST /favorites
   # POST /favorites.json
+  # Creation of a new Favorite Route Group
   def create
     @favorite = Favorite.new(favorite_params)
     @commuters = Commuter.all
@@ -41,6 +59,7 @@ class FavoritesController < ApplicationController
 
   # PATCH/PUT /favorites/1
   # PATCH/PUT /favorites/1.json
+  # Editing of the Favorite Route Groups' Name and to which commuter it is dedicated to.
   def update
     respond_to do |format|
       if @favorite.update(favorite_params)
@@ -55,6 +74,7 @@ class FavoritesController < ApplicationController
 
   # DELETE /favorites/1
   # DELETE /favorites/1.json
+  # Deletion of a Favorite Route Group
   def destroy
     @favorite.destroy
     respond_to do |format|
