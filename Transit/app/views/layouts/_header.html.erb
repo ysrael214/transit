@@ -10,7 +10,7 @@
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
   # Client Group: UP Student Dormers
-  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their 
+  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their
   #   permanent residence of the routes and methods from their current location. Being on a budget, students are more inclined to cheaper options in favor of comfort or travel time.
 -->
 
@@ -20,9 +20,9 @@
       <a class="transit-icon my-auto" href="<%=  root_path %>" > <h3>TRANSIT</h3> </a>
 
       <ul class="d-flex ml-auto my-auto">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Favorites", '/favorites' %></li>
-          <li><%= link_to "Transit Lines", transit_lines_path %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Favorites", favorites_path %></li>
+        <li><%= link_to "Transit Lines", transit_lines_path %></li>
       </ul>
 
     </div>

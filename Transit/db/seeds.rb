@@ -19,14 +19,14 @@ Commuter.create(name: "Menard", email: "mmcruz@gmail.com", password: "password")
 Commuter.create(name: "Michael", email: "mio@gmail.com", password: "password")
 
 # List of Favorites
-Favorite.create(name: "Sean's Route to Pagudpud", commuter_id: 1)
+sean =Favorite.create(name: "Sean's Route to Pagudpud", commuter_id: 1)
 Favorite.create(name: "Menard's Route to Naga", commuter_id: 2)
 Favorite.create(name: "Mio's Route to Pangasinan", commuter_id: 3)
 
 # List of Transit Lines
-f = TransitLine.create(name: "Five Star", kind: "Bus")
-m = TransitLine.create(name: "MRT-3", kind: "Train")
-g = TransitLine.create(name: "Green Liner", kind: "Bus")
+f = TransitLine.create(name: "Five Star", kind: "Bus", status: "Full Operation", restrictions: "No food", avg_price: 20.00, operating_hours: "24/7", reliability: "8.0")
+m = TransitLine.create(name: "MRT-3", kind: "Train", status: "Full Operation", restrictions: "No food and drinks", avg_price: 30.00, operating_hours: "7AM - 11PM", reliability: "7.0")
+g = TransitLine.create(name: "Green Liner", kind: "Bus", status: "Full Operation", restrictions: "None", avg_price: 25.00, operating_hours: "7AM - 11PM", reliability: "9.0")
 
 # List of Transit Stops
 cs = TransitStop.create(name: "Cubao Southbound", kind: "Bus Terminal", latitude: 14.631, longitude: 121.045)
@@ -41,3 +41,6 @@ g.transit_stops = [cs]
 f.save
 m.save
 g.save
+
+sean.transit_lines = [f,m,g]
+sean.save

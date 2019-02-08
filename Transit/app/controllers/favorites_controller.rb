@@ -9,7 +9,7 @@
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
   # Client Group: UP Student Dormers
-  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their 
+  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their
   #   permanent residence of the routes and methods from their current location. Being on a budget, students are more inclined to cheaper options in favor of comfort or travel time.
 
 class FavoritesController < ApplicationController
