@@ -19,8 +19,8 @@ Commuter.create(name: "Menard", email: "mmcruz@gmail.com", password: "password")
 Commuter.create(name: "Michael", email: "mio@gmail.com", password: "password")
 
 # List of Favorites
-sean =Favorite.create(name: "Sean's Route to Pagudpud", commuter_id: 1)
-Favorite.create(name: "Menard's Route to Naga", commuter_id: 2)
+seans_route = Favorite.create(name: "Sean's Route to Pagudpud", commuter_id: 1)
+menards_route = Favorite.create(name: "Menard's Route to Naga", commuter_id: 2)
 Favorite.create(name: "Mio's Route to Pangasinan", commuter_id: 3)
 
 # List of Transit Lines
@@ -42,5 +42,10 @@ f.save
 m.save
 g.save
 
-sean.transit_lines = [f,m,g]
-sean.save
+seans_route.transit_lines = [f,m,g]
+seans_route.save
+
+menards_route.transit_lines = [m,g]
+menards_route.save
+
+# Menard will populate more datapoints below --- 
