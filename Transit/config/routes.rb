@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   # For Commuter / User
   get '/signup', to: 'commuters#new', as: 'signup'
-  get '/commuters/:id', to:'commuter#show'
+  get '/commuters/:id', to:'commuters#show', as: 'commuter'
   post '/signup', to:'commuter#create', as: 'create_commuter'
   resources :transit_stops
   resources :transit_lines
