@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :transit_lines
   root 'static_pages#home'
   resources :favorites
+  # For FRG Editing
+  patch '/favorites/:id/remove_favorite/:remove_id/', to: 'favorites#removal', as: 'remove_transit_line'
+  patch '/favorites/:id/add_favorite/:add_id/', to: 'favorites#addition', as: 'add_transit_line'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

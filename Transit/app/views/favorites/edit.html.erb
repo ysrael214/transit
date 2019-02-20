@@ -7,6 +7,7 @@
   # 1.0 - 2/5/2019 - Sean Chan - Initial File
   # 2.0 - 2/7/2019 - Menard Cruz - Initial Frontend layouting
   # 2.1 - 2/7/2019 - Michael Marrero - Edited Comments, Added Comment block for detailed information regarding the software.
+  # 3.0 - 2/18/2019 - Michael Marrero - Added the editing of the transit lines, by adding/deleting transit lines within a favorite route group
 
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
@@ -22,6 +23,46 @@
     The line of code after this, gives a form upon which we fill up in updating a Favorite Route Group's Name or to whom is the Favorite Route Group dedicated too
   -->
   <%= render 'form', favorite: @favorite %>
+  <h2>List of owned Transit Lines</h2>
+  <table class = "table">
+    <tbody>
+      <% @favorite.transit_lines.each do |fav_transit_line| %>
+      <tr>
+        <td><%= fav_transit_line.name %></td>
+        <td><%= fav_transit_line.status %></td>
+        <td><%= fav_transit_line.operating_hours %></td>
+        <td><%= fav_transit_line.kind %></td>
+        <td><%= fav_transit_line.restrictions %></td>
+        <td><%= fav_transit_line.reliability %></td>
+        <td><%= fav_transit_line.avg_price %></td>
+        <td><%= link_to 'Remove', remove_transit_line_path(@favorite.id, fav_transit_line.id), method: :patch %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2>List of available Transit Lines NOT yet added</h2>
+  <table class = "table">
+    <tbody>
+      <% @transit_lines.each do |transit_line| %>
+        <% catch :addedtransitline do %>
+            <% if @favorite.transit_lines.exists?(id: transit_line.id)
+               throw :addedtransitline
+            end%>
+            <tr>
+              <td><%= transit_line.name %></td>
+              <td><%= transit_line.status %></td>
+              <td><%= transit_line.operating_hours %></td>
+              <td><%= transit_line.kind %></td>
+              <td><%= transit_line.restrictions %></td>
+              <td><%= transit_line.reliability %></td>
+              <td><%= transit_line.avg_price %></td>
+              <td><%= link_to 'Add', add_transit_line_path(@favorite.id, transit_line.id), method: :patch %></td>
+            </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
 
   <%= link_to 'Show', @favorite %> |
   <%= link_to 'Back', favorites_path %>
