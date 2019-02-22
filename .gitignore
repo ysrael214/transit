@@ -7,6 +7,9 @@
 # Ignore bundler config.
 Transit/.bundle
 
+# ignore macOS DS Store file
+/.DS_Store
+
 # Ignore the default SQLite database.
 Transit/db/*.sqlite3
 Transit/db/*.sqlite3-journal

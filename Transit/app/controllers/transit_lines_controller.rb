@@ -9,7 +9,7 @@
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
   # Client Group: UP Student Dormers
-  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their 
+  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their
   #   permanent residence of the routes and methods from their current location. Being on a budget, students are more inclined to cheaper options in favor of comfort or travel time.
 
 class TransitLinesController < ApplicationController
@@ -83,6 +83,6 @@ class TransitLinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transit_line_params
-      params.require(:transit_line).permit(:status, :operating_hours, :type, :restrictions, :reliability, :name, :avg_price)
+      params.require(:transit_line).permit(:status, :operating_hours, :kind, :restrictions, :reliability, :name, :avg_price)
     end
 end
