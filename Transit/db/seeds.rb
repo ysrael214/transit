@@ -12,6 +12,8 @@
 
 # Code History
 # 1.0 - 2/5/2019 - Sean Chan - Initial File and 3 data points for each table
+# 2.0 - 2/22/2019 - Menard Ysrael Cruz - Added additional data points for Transit Stops
+# 2.1 - 2/22/2019 - Michael Marrero - Code reviewed. Added some additional comments
 
 # List of Commuters
 Commuter.create(name: "Sean", email: "sean@gmail.com", password: "password")
