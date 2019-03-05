@@ -16,10 +16,20 @@
 -->
 
 <% content_for :title, "Favorites" %>
-<div class="container">
+<div class="container py-5">
   <p id="notice"><%= notice %></p>
 
-  <h1>Favorites</h1>
+  <div class="row">
+    <div class="col-9">
+      <h1>Favorites</h1>
+    </div>
+    <div class="col-3 d-flex">
+      <a class=" ml-auto my-auto" href="<%= new_favorite_path %>">
+        <button type="button" class="btn btn-warning"><i class="fas fa-plus"></i> New Favorite</button>
+
+      </a>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr>
@@ -41,9 +51,9 @@
         <tr>
           <td><%= favorite.name %></td>
           <td><%= favorite.commuter.name %></td>
-          <td><%= link_to 'Show', favorite %></td>
-          <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
-          <td><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><a href="<%= favorites_path %>"><i class="fas fa-eye"></i></a> </td>
+          <td><a href="<%= edit_favorite_path(favorite) %>"><i class="fas fa-edit"></i></a></td>
+          <td><a href="<%= favorites_path %>" rel="no-follow" data-method="delete" data-confirm="Are you sure you want to remove <%= favorite.name %>?"><i class="fas fa-times"></i></a></td>
         </tr>
       <% end %>
     </tbody>
@@ -51,5 +61,6 @@
 
   <br>
 
-  <%= link_to 'New Favorite', new_favorite_path %>
+
+  
 </div>
