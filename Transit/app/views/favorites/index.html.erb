@@ -7,6 +7,7 @@
   # 1.0 - 2/5/2019 - Sean Chan - Initial File
   # 2.0 - 2/7/2019 - Menard Cruz - Initial Frontend layouting
   # 2.1 - 2/7/2019 - Michael Marrero - Edited Comments, Added Comment block for detailed information regarding the software.
+  # 2.2 - 3/6/2019 - Menard Cruz - Added more details in the frontend
 
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
@@ -17,13 +18,18 @@
 
 <% content_for :title, "Favorites" %>
 <div class="container py-5">
-  <p id="notice"><%= notice %></p>
+  <% if notice %>
+    <div class="alert alert-info" id="notice" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
 
   <div class="row">
-    <div class="col-9">
+    <div class="col-8">
       <h1>Favorites</h1>
     </div>
-    <div class="col-3 d-flex">
+    <div class="col-4 d-flex">
       <a class=" ml-auto my-auto" href="<%= new_favorite_path %>">
         <button type="button" class="btn btn-warning"><i class="fas fa-plus"></i> New Favorite</button>
 
@@ -51,9 +57,9 @@
         <tr>
           <td><%= favorite.name %></td>
           <td><%= favorite.commuter.name %></td>
-          <td><a href="<%= favorites_path %>"><i class="fas fa-eye"></i></a> </td>
+          <td><a href="<%= favorite_path(favorite) %>"><i class="fas fa-eye"></i></a> </td>
           <td><a href="<%= edit_favorite_path(favorite) %>"><i class="fas fa-edit"></i></a></td>
-          <td><a href="<%= favorites_path %>" rel="no-follow" data-method="delete" data-confirm="Are you sure you want to remove <%= favorite.name %>?"><i class="fas fa-times"></i></a></td>
+          <td><a href="<%= favorite_path(favorite) %>" rel="no-follow" data-method="delete" data-confirm="Are you sure you want to remove <%= favorite.name %>?"><i class="fas fa-times"></i></a></td>
         </tr>
       <% end %>
     </tbody>
