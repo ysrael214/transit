@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_080253) do
+ActiveRecord::Schema.define(version: 2019_03_06_143904) do
 
   create_table "commuters", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 2019_02_07_080253) do
   create_table "favorites_transit_lines", force: :cascade do |t|
     t.integer "transit_line_id"
     t.integer "favorite_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string "keywords"
+    t.string "operating_hours"
+    t.string "type"
+    t.decimal "reliability"
+    t.decimal "min_avg_price"
+    t.decimal "max_avg_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "transit_lines", force: :cascade do |t|

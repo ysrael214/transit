@@ -19,7 +19,17 @@ class TransitLinesController < ApplicationController
   # GET /transit_lines
   # GET /transit_lines.json
   def index
-    @transit_lines = TransitLine.search(params[:search])
+    @transit_lines = TransitLine.all
+    search
+  end
+
+  def search
+    if (params[:search])
+      @transit_lines = TransitLine.where(["name LIKE ?","%#{params[:search]}%"])
+    else
+      @transit_lines = TransitLine.all
+    end
+    render 'index'
   end
 
   # GET /transit_lines/1

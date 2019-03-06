@@ -17,12 +17,4 @@
 class TransitLine < ApplicationRecord
   has_and_belongs_to_many :transit_stops
   has_and_belongs_to_many :favorites
-
-  def self.search(search)
-    if search
-      where(["name LIKE ?","%#{search}%"])
-    else
-      all
-    end
-  end
 end
