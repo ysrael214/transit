@@ -5,6 +5,7 @@
   # Code History
   # 1.0 - 2/5/2019 - Menard Cruz - Initial File
   # 1.1 - 2/7/2019 - Michael Marrero - Edited Comments, Added Comment Block that gives detailed information on the software.
+  # 2.0 - 3/4/2019 - Michael Marrero - Edited the index method to reflect search query results on transit lines
 
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
@@ -18,7 +19,7 @@ class TransitLinesController < ApplicationController
   # GET /transit_lines
   # GET /transit_lines.json
   def index
-    @transit_lines = TransitLine.all
+    @transit_lines = TransitLine.search(params[:search])
   end
 
   # GET /transit_lines/1

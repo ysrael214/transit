@@ -8,6 +8,7 @@
   # 2.0 - 2/7/2019 - Menard Cruz - Initial Frontend layouting
   # 3.0 - 2/7/2019 - Sean Chan - ERB fixes
   # 3.1 - 2/7/2019 - Michael Marrero - Edited Comments, Addec Comment block that gives detailed information on the software.
+  # 4.0 - 3/4/2019 - Michael Marrero - Added Basic Search form for Search querying Transit Lines
 
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
@@ -21,6 +22,12 @@
 
 <div class="container">
   <h1>Transit Lines</h1>
+
+  <%= form_tag transit_lines_path, :method => 'get' do %>
+    <%= label_tag "Name" %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  <% end %>
 
   <table class="table">
     <thead>
