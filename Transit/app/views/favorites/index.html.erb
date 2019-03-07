@@ -46,8 +46,8 @@
     </thead>
 
     <tbody>
-      <% i = 0 %>
-      <% @favorites.each do |favorite| %>
+
+      <% current_user.favorites.each do |favorite| %>
       <!--
         Displays the lists of Favorite Route Groups and what the user can do with them.
         Users can either:
@@ -62,17 +62,16 @@
           <td><a href="<%= edit_favorite_path(favorite) %>"><i class="fas fa-edit"></i></a></td>
           <td><a href="<%= favorite_path(favorite) %>" rel="no-follow" data-method="delete" data-confirm="Are you sure you want to remove <%= favorite.name %>?"><i class="fas fa-times"></i></a></td>
         </tr>
-        <% i = 1 %>
       <% end %>
     </tbody>
   </table>
 
-   <% if i == 0 %>
+   <% if current_user.favorites.length == 0 %>
       <div class="p-3 d-flex">
         <span class="m-auto">There are no favorite route groups to show.</span>
       </div>
     <% end %>
 
 
-  
+
 </div>

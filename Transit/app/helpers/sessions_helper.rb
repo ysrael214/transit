@@ -10,18 +10,16 @@ module SessionsHelper
 
   # Returns the current user, if he/she is logged-in.
   def current_user
-    if session[:commuter_id]
-      if @commuter.nil?
-        @commuter = Commuter.find_by(id: session[:commuter_id])
-      else
-        @commuter
-      end
+    if @commuter.nil?
+      @commuter = Commuter.find_by(id: session[:commuter_id])
+    else
+      @commuter
     end
   end
 
   # Returns whether user is logged in or not. Exclamation mark is the NOT operator.
   def logged_in?
-    !current_user.nil? && !(session[:user_id].nil?)
+    !current_user.nil? && !(session[:commuter_id].nil?)
   end
 
   # Logs out user by deleting his entry in the session variable.
