@@ -16,10 +16,14 @@
 -->
 
 <% content_for :title, "Home" %>
-<div class="w-100 d-flex" style="color: white;height: 90vh;background-image: url(<%= asset_path('transit-bg.jpg') %>);">
-  <%= render 'static_pages/flashes' %>
 
-  <div class="container m-auto" >
+<div class="w-100 d-flex" style="height: 90vh; background-attachment: fixed; background-size:cover; background-image: url(<%= asset_path('transit-bg.jpg') %>);">
+
+   <%= render 'static_pages/flashes' %>
+
+
+  <div class="container m-auto p-5" style="background: white;">
+
     <h1>Home</h1>
 
     <p class="p-5">
