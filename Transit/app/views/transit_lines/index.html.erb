@@ -1,4 +1,4 @@
-<!-- 
+<!--
   # License
   # This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo
   # of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2018-2019
@@ -13,7 +13,7 @@
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
   # Client Group: UP Student Dormers
-  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their 
+  # Purpose of the Software: The project is to make a web-based application named Transit, and its main vision is to inform dormers and other temporary housed students to travel back to their
   #   permanent residence of the routes and methods from their current location. Being on a budget, students are more inclined to cheaper options in favor of comfort or travel time.
 -->
 
@@ -27,27 +27,28 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="col-7">
-     <h1>Transit Lines</h1>
+  <h1>Transit Lines</h1>
+
+  <div class="row my-3">
+    <div class="col-lg-8 mb-3 mb-lg-0">
+      <%= form_tag transit_lines_path, :class => 'd-flex', :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Name" , :class => 'form-control'%>
+        <%= submit_tag "Search", :class => 'btn btn-primary mx-3'%>
+      <% end %>
     </div>
-    <div class="col-5 d-flex">
-      <a class="ml-auto text-right" href="<% new_transit_line_path %>" > <button type="button" class="btn btn-warning"><i class="fas fa-plus"></i> New Transit Line</button> </a>
+    <div class="col-lg-4 d-flex">
+      <a class="ml-auto text-sm-right text-center" href="<% new_transit_line_path %>" > <button type="button" class="btn btn-warning"><i class="fas fa-plus"></i> New Transit Line</button> </a>
     </div>
   </div>
 
-  <%= form_tag transit_lines_path, :method => 'get' do %>
-    <%= label_tag "Name" %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
-  <% end %>
+
 
   <table class="table">
     <thead>
       <tr>
         <th> </th>
         <th>Name</th>
-        
+
         <th>Operating hours</th>
         <th>Type</th>
         <th>Restrictions</th>
@@ -78,7 +79,7 @@
             </i>
         </td>
         <td><%= transit_line.name %></td>
-     
+
         <td><%= transit_line.operating_hours %></td>
         <td><%= transit_line.kind %></td>
         <td><%= transit_line.restrictions %></td>

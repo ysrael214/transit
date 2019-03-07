@@ -21,8 +21,14 @@
 
       <ul class="d-flex ml-auto my-auto">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Favorites", favorites_path %></li>
         <li><%= link_to "Transit Lines", transit_lines_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Favorites", favorites_path %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+        <% else %>
+          <li><%= link_to "Login", login_path %></li>
+        <% end %>
+
       </ul>
 
     </div>
