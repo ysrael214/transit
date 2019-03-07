@@ -1,7 +1,7 @@
 <%= content_for :title, "Editing " + @transit_line.name %>
 
-<div class="container">
-  <h1>Editing Transit Line</h1>
+<div class="container py-5">
+  <h1>Editing <%= @transit_line.name %></h1>
 
   <%= render 'form', transit_line: @transit_line %>
 
