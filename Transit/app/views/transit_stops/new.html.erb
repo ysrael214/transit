@@ -7,11 +7,18 @@
 
   <h1 class="mt-5">New Transit Stop</h1>
 
-  <div class="d-flex">
-    <div id="leaflet-map" class="mx-auto my-4"></div>
+  <div class="row">
+  	<div class="col-lg-5 d-flex">
+    	<div id="leaflet-map" class="mx-auto my-4"></div>
+    </div>
+    <div class="col-lg-7 d-flex px-5">
+    	<div class="m-auto">
+    		<%= render 'form', transit_stop: @transit_stop %>
+    	</div>
+    </div>
   </div>
 
-  <%= render 'form', transit_stop: @transit_stop %>
+  
 
       <script>
           var lat = 14.6538;

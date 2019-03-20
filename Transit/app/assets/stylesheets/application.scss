@@ -70,10 +70,13 @@
 
  #leaflet-map
  { 
-  height: 400px; 
-  width:600px;
+  height: 20rem; 
+  width: 30rem;
 }
 
+.leaflet-routing-container {
+    display: none;
+}
 
 
  /* Media */

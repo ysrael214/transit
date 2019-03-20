@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="row">
-    <div class="field col-6">
+    <div class="field col-lg-6">
       <%= form.label :name %>
       <%= form.text_field :name, :class => 'form-control' %>
     </div>
 
-    <div class="field col-6">
+    <div class="field col-lg-6">
       <%= form.label :kind, "Type" %>
       <%= form.text_field :kind, :class => 'form-control' %>
     </div>
@@ -25,17 +25,17 @@
 
   <div class="row">
 
-    <div class="field col-6">
+    <div class="field col-lg-6">
       <%= form.label :status %>
       <%= form.text_field :status, :class => 'form-control' %>
     </div> 
 
-    <div class="field col-3 mx-auto">
+    <div class="field col-lg-3 col-6 mx-auto">
       <%= form.label :latitude %>
       <%= form.text_field :latitude, :class => 'form-control lat' %>
     </div>
 
-    <div class="field col-3 mx-auto">
+    <div class="field col-lg-3 col-6 mx-auto">
       <%= form.label :longitude %>
       <%= form.text_field :longitude, :class => 'form-control lng' %>
     </div>
