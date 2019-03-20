@@ -17,14 +17,40 @@
 
 <% content_for :title, "Home" %>
 
-<div class="w-100 d-flex flex-column" style="height: 90vh; background-attachment: fixed; background-size:cover; background-image: url(<%= asset_path('transit-bg.jpg') %>);">
+<div class="w-100 d-flex flex-column" style="min-height: 90vh; background-attachment: fixed; background-size:cover; background-image: url(<%= asset_path('transit-bg.jpg') %>);">
 
    <%= render 'static_pages/flashes' %>
 
 
-  <div class="container m-auto p-5 d-flex" style="color: white; font-size: 6rem;">
+  <div class="container m-auto p-5 row" style="color: white; z-index: 22;">
+    <div class="col-lg-6 m-auto text-center text-lg-right pr-3">
+        <h1>Connecting routes everywhere.</h1>
+    </div>
+    <div class="col-lg-6 m-auto">
+      <%= form_for :session, url: login_path, class: :form, method: :post do |form| %>
+        <div class="field my-3">
+          <%= form.label :email %>
+          <%= form.text_field :email, :class => 'form-control' %>
+        </div>
 
-    <h1 class="m-auto">TRANSIT</h1>
+        <div class="field my-3">
+          <%= form.label :password %>
+          <%= form.password_field :password, :class => 'form-control', :autocomplete=>'off' %>
+        </div>
+        <div class="actions my-3">
+          <div class="row">
+            <div class="col-md-8 text-center text-md-left">
+              <%= button_tag(type: "submit", class: "btn btn-warning my-auto mb-lg-0 mx-auto mr-lg-0") do %>
+                <i class="fas fa-sign-in-alt"></i> Login
+              <% end %>
+            </div>
+            <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
+              <%= link_to 'Sign Up', signup_path, :style => "color:#fefefe" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
 
 

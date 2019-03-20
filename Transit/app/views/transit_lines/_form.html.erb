@@ -3,7 +3,7 @@
   <% if transit_line.errors.any? %>
 
     <div class="alert alert-info" role="alert" id="error_explanation">
-      <%= pluralize(transit_line.errors.count, "error") %> prohibited this favorite from being saved:
+      <%= pluralize(transit_line.errors.count, "error") %> prohibited this transit line from being saved:
         <small>
     
           <% transit_line.errors.full_messages.each do |message| %>
