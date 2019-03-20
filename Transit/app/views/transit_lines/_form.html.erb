@@ -51,7 +51,9 @@
     <%= form.text_field :avg_price, :class => 'form-control'  %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions my-3 d-flex">
+      <%= button_tag(type: "submit", class: "btn btn-warning my-auto mx-auto") do %>
+        <i class="far fa-check-circle"></i> Confirm
+      <% end %> 
   </div>
 <% end %>
