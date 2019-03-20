@@ -58,7 +58,7 @@
 
  .transit-footer{
  	min-height: 100px;
- 	height: 25vh;
+  max-height: 250vh;
  	border-top: 1px solid #ddd;
  	background-color: #eee;
  }
@@ -67,6 +67,12 @@
  .transit-active{
  	color: #f5a623 !important;
  }
+
+ #leaflet-map
+ { 
+  height: 400px; 
+  width:600px;
+}
 
 
 
