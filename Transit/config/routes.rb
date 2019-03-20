@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # For Commuter / User
   get '/signup', to: 'commuters#new', as: 'signup'
   get '/commuters/:id', to:'commuters#show', as: 'commuter'
-  post '/signup', to:'commuter#create', as: 'create_commuter'
+  post '/signup', to:'commuters#create', as: 'create_commuter'
   resources :transit_stops
   resources :transit_lines
   root 'static_pages#home'
