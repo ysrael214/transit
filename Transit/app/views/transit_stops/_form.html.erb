@@ -1,11 +1,12 @@
 <%= form_with(model: transit_stop, local: true) do |form| %>
-   <% if commuter.errors.any? %>
+
+   <% if transit_stop.errors.any? %>
 
     <div class="alert alert-info" role="alert" id="error_explanation">
-      <%= pluralize(commuter.errors.count, "error") %> prohibited this transit stop from being saved:
+      <%= pluralize(transit_stop.errors.count, "error") %> prohibited this transit stop from being saved:
         <small>
     
-          <% commuter.errors.full_messages.each do |message| %>
+          <% transit_stop.errors.full_messages.each do |message| %>
             <span class="d-block py-1 ml-2"><%= message %></span>
           <% end %>
      
