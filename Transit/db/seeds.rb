@@ -25,11 +25,11 @@ Favorite.create(name: "Mio's Route to Pangasinan", commuter_id: 3)
 
 # List of Transit Lines
 f = TransitLine.create(name: "Five Star", kind: "Bus", status: "Full Operation", restrictions: "No food",
-  avg_price: 20.00, operating_hours: "24/7", reliability: "8.0", start_time: "7AM", close_time: "8PM")
+  avg_price: 20.00, operating_hours: "24/7", reliability: "8.0", start_time: "12AM", close_time: "12AM")
 m = TransitLine.create(name: "MRT-3", kind: "Train", status: "Full Operation", restrictions: "No food and drinks",
-   avg_price: 30.00, operating_hours: "7AM - 11PM", reliability: "7.0", start_time: "7AM", close_time: "8PM")
+   avg_price: 30.00, operating_hours: "7AM - 11PM", reliability: "7.0", start_time: "7AM", close_time: "11PM")
 g = TransitLine.create(name: "Green Liner", kind: "Bus", status: "Full Operation", restrictions: "None",
-   avg_price: 25.00, operating_hours: "7AM - 11PM", reliability: "9.0", start_time: "7AM", close_time: "5PM")
+   avg_price: 25.00, operating_hours: "7AM - 11PM", reliability: "9.0", start_time: "7AM", close_time: "11PM")
 
 
 # List of Transit Stops
@@ -55,7 +55,8 @@ menards_route.save
 # Menard will populate more datapoints below ---
 
 
-TransitLine.create(name: "UP-SM North EDSA Jeep", kind: "Jeep", status: "Full Operation", restrictions: "None", avg_price: 11.00, operating_hours: "8AM - 10PM", reliability: "8.0").transit_stops = [
+TransitLine.create(name: "UP-SM North EDSA Jeep", kind: "Jeep", status: "Full Operation", restrictions: "None", avg_price: 11.00,
+  operating_hours: "8AM - 10PM", reliability: "8.0", start_time: "8AM", close_time: "10PM").transit_stops = [
   TransitStop.create(name: "UP Diliman", kind: "School", latitude: 14.653796, longitude: 121.068538),
   TransitStop.create(name: "Philippine Coconut Authority", kind: "Transport Terminal", latitude: 14.653625, longitude: 121.053138),
   TransitStop.create(name: "SM North EDSA", kind: "Transport Terminal", latitude: 14.656321, longitude: 121.028872)

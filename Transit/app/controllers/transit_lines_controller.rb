@@ -29,17 +29,21 @@ class TransitLinesController < ApplicationController
     if (params[:search].present? or params[:kind].present? or params[:operating_hours].present? or params[:reliability].present? or params[:min_price].present? or params[:max_price].present?)
       @transit_lines = @transit_lines.where(["name LIKE ?", "%#{params[:search]}%"])
       @transit_lines = @transit_lines.where(["kind LIKE ?", "%#{params[:kind]}%"]) if params[:kind].present?
-      (listOfLinesWithinHours = []
-        for i in TransitLine.all
-          startTime = DateTime.parse(i.start_time)
-          endTime = DateTime.parse(i.close_time)
-          if( startTime <= DateTime.parse(params[:operating_hours]) && DateTime.parse(params[:operating_hours]) <= endTime || startTime == endTime)
-          listOfLinesWithinHours.push(i)
-          end
-        end
-      @transit_lines = listOfLinesWithinHours) if params[:operating_hours].present?
+
+      # (
+      #   for i in @transit_lines
+      #     startTime = DateTime.parse(i.start_time)
+      #     endTime = DateTime.parse(i.close_time)
+      #     if !( startTime <= DateTime.parse(params[:operating_hours]) && DateTime.parse(params[:operating_hours]) <= endTime || startTime == endTime)
+      #       @transit_lines.reject{|transit_line| transit_line == i}
+      #     end
+      #   end
+      # ) if params[:operating_hours].present?
+
       #@transit_lines = @transit_lines.where(["#{:start_time.to_s.to_i} <= ?", "#{((DateTime.parse(params[:operating_hours])).strftime("%H%M"))}".to_i]) if params[:operating_hours].present?
-      @transit_lines = @transit_lines.where(["reliability LIKE ?", "%#{params[:reliability]}%"]) if params[:reliability].present?
+
+      @transit_lines = @transit_lines.where(reliability: params[:reliability]) if params[:reliability].present?
+
       @transit_lines = @transit_lines.where(["avg_price >= ?", params[:min_price].to_f]) if params[:min_price].present?
       @transit_lines = @transit_lines.where(["avg_price <= ?", params[:max_price].to_f]) if params[:max_price].present?
     else
