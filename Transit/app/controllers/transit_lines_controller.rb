@@ -26,7 +26,6 @@ class TransitLinesController < ApplicationController
 
   def search
     @transit_lines = TransitLine.all
-
     if (params[:search].present? or params[:kind].present? or params[:operating_hours].present? or params[:reliability].present? or params[:min_price].present? or params[:max_price].present?)
       @transit_lines = @transit_lines.where(["name LIKE ?", "%#{params[:search]}%"])
       @transit_lines = @transit_lines.where(["kind LIKE ?", "%#{params[:kind]}%"]) if params[:kind].present?

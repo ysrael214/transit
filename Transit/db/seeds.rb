@@ -24,9 +24,12 @@ menards_route = Favorite.create(name: "Menard's Route to Naga", commuter_id: 2)
 Favorite.create(name: "Mio's Route to Pangasinan", commuter_id: 3)
 
 # List of Transit Lines
-f = TransitLine.create(name: "Five Star", kind: "Bus", status: "Full Operation", restrictions: "No food", avg_price: 20.00, operating_hours: "24/7", reliability: "8.0")
-m = TransitLine.create(name: "MRT-3", kind: "Train", status: "Full Operation", restrictions: "No food and drinks", avg_price: 30.00, operating_hours: "7AM - 11PM", reliability: "7.0")
-g = TransitLine.create(name: "Green Liner", kind: "Bus", status: "Full Operation", restrictions: "None", avg_price: 25.00, operating_hours: "7AM - 11PM", reliability: "9.0")
+f = TransitLine.create(name: "Five Star", kind: "Bus", status: "Full Operation", restrictions: "No food",
+  avg_price: 20.00, operating_hours: "24/7", reliability: "8.0", start_time: "7AM", close_time: "8PM")
+m = TransitLine.create(name: "MRT-3", kind: "Train", status: "Full Operation", restrictions: "No food and drinks",
+   avg_price: 30.00, operating_hours: "7AM - 11PM", reliability: "7.0", start_time: "7AM", close_time: "8PM")
+g = TransitLine.create(name: "Green Liner", kind: "Bus", status: "Full Operation", restrictions: "None",
+   avg_price: 25.00, operating_hours: "7AM - 11PM", reliability: "9.0", start_time: "7AM", close_time: "5PM")
 
 
 # List of Transit Stops
