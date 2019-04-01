@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Code History
   # 1.0 - 2/5/2019 - Sean Ryan Chan - Initial File
   # 2.0 - 3/4/2019 - Sean Ryan Chan - Transit stops, Transit Lines, Favorites, login, and logout routes.
+  # 2.1 - 3/20/2019 - Sean Ryan Chan - Edited routes regarding login/signup functions
 
   # File Creation Date: 2/5/2019
   # Development Group: Transit Development Tteam (Chan,Cruz,Marrero)
