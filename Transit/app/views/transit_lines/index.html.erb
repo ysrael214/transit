@@ -36,7 +36,7 @@
       <%= form_tag transit_lines_path, :class => 'd-flex', :method => 'get' do %>
         <%= text_field_tag :search, params[:search], :placeholder => "Name" , :class => 'form-control'%>
         <%= text_field_tag :kind, params[:kind], :placeholder => "Type" , :class => 'form-control'%>
-        <%= time_field_tag :operating_hours, params[:operating_hours], :placeholder => "Operating Hours" , :class => 'form-control'%>
+        <%# time_field_tag :operating_hours, params[:operating_hours], :placeholder => "Operating Hours" , :class => 'form-control'%>
         <%= text_field_tag :reliability, params[:reliability], :placeholder => "Reliability" , :class => 'form-control'%>
         <%= text_field_tag :min_price, params[:min_price], :placeholder => "Minimum Price" , :class => 'form-control'%>
         <%= text_field_tag :max_price, params[:max_price], :placeholder => "Maximum Price" , :class => 'form-control'%>
@@ -44,7 +44,7 @@
       <% end %>
     </div>
     <div class="col-lg-4 d-flex">
-      <a class="ml-auto text-sm-right text-center" href="<% new_transit_line_path %>" > <button type="button" class="btn btn-warning"><i class="fas fa-plus"></i> New Transit Line</button> </a>
+      <a class="ml-auto text-sm-right text-center" href="<%= new_transit_line_path %>" > <button type="button" class="btn btn-warning"><i class="fas fa-plus"></i> New Transit Line</button> </a>
     </div>
   </div>
 
