@@ -33,14 +33,23 @@
 
   <div class="row my-3">
     <div class="col-lg-8 mb-3 mb-lg-0">
-      <%= form_tag transit_lines_path, :class => 'd-flex', :method => 'get' do %>
-        <%= text_field_tag :search, params[:search], :placeholder => "Name" , :class => 'form-control'%>
-        <%= text_field_tag :kind, params[:kind], :placeholder => "Type" , :class => 'form-control'%>
-        <%= time_field_tag :operating_hours, params[:operating_hours], :placeholder => "Operating Hours" , :class => 'form-control'%>
-        <%= text_field_tag :reliability, params[:reliability], :placeholder => "Reliability" , :class => 'form-control'%>
-        <%= text_field_tag :min_price, params[:min_price], :placeholder => "Minimum Price" , :class => 'form-control'%>
-        <%= text_field_tag :max_price, params[:max_price], :placeholder => "Maximum Price" , :class => 'form-control'%>
-        <%= submit_tag "Search", :class => 'btn btn-primary mx-3'%>
+      <%= form_tag transit_lines_path, :class => 'd-flex flex-wrap', :method => 'get' do %>
+        <div class="d-flex w-100 mb-3">
+          <%= text_field_tag :search, params[:search], :placeholder => "Name" , :class => 'form-control'%>
+          <%= submit_tag "Search", :class => 'btn btn-primary ml-3'%>
+        </div>
+        <div class="d-flex w-100 flex-wrap ">
+          <div class="row m-0 mb-3 w-100">
+            <%= text_field_tag :kind, params[:kind], :placeholder => "Type" , :class => 'form-control col-lg-4'%>
+            <%= time_field_tag :operating_hours, params[:operating_hours], :placeholder => "Operating Hours" , :class => 'form-control col-lg-4'%> 
+            <%= text_field_tag :reliability, params[:reliability], :placeholder => "Reliability" , :class => 'form-control col-lg-4'%>
+          </div> 
+          <div class="row m-0 w-100">
+            <%= text_field_tag :min_price, params[:min_price], :placeholder => "Minimum Price" , :class => 'form-control col-6'%>
+            <%= text_field_tag :max_price, params[:max_price], :placeholder => "Maximum Price" , :class => 'form-control col-6'%>
+          </div>
+        </div>
+       
       <% end %>
     </div>
     <div class="col-lg-4 d-flex">
