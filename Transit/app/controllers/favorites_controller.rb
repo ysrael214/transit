@@ -27,6 +27,19 @@ class FavoritesController < ApplicationController
   # GET /favorites/1.json
   # Should show the Favorite New Group's information, along with the transit lines associated with it.
   def show
+    @string = ""
+    @flag = 0
+    colorArray = FavoritesHelper::COLORSARRAY
+
+    @favorite.transit_lines.each do |transit_line|
+      transit_line.transit_stops.each do |transit_stop|
+        if @flag == 1
+         @string = @string + ','
+        end
+        @string = @string + "\"" + transit_stop.name + "\""
+        @flag = 1
+      end
+    end
   end
 
   # GET /favorites/new
