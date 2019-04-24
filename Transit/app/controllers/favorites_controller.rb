@@ -60,16 +60,21 @@ class FavoritesController < ApplicationController
   # POST /favorites.json
   # Creation of a new Favorite Route Group
   def create
-    @favorite = Favorite.new(favorite_params)
-    @commuters = Commuter.all
-    respond_to do |format|
-      if @favorite.save
-        format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
-        format.json { render :show, status: :created, location: @favorite }
-      else
-        format.html { render :new }
-        format.json { render json: @favorite.errors, status: :unprocessable_entity }
+    if logged_in?
+      @favorite = Favorite.new(favorite_params)
+      @favorite.commuter_id = current_user.id
+      @commuters = Commuter.all
+      respond_to do |format|
+        if @favorite.save
+          format.html { redirect_to @favorite, notice: 'Favorite was successfully created.' }
+          format.json { render :show, status: :created, location: @favorite }
+        else
+          format.html { render :new }
+          format.json { render json: @favorite.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to root_path
     end
   end
 
