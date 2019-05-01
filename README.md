@@ -18,9 +18,20 @@ Ruby on Rails Framework
 
   2.0 - 02/08/19 - Michael - Put licenses and polished code
 
-# Setting Up Rails Server
+# Setting Up Rails Server on Local Machine
 `rails db:drop`
 
 execute: `rails db:schema:load`
 
 `rails db:seed`
+
+# Deploying on Heroku Service (Remote Server)
+[This is the Git Repository for the Live Heroku Version. Clone this repo and then run the following commands.]https://github.com/seanryanchan/transit-heroku
+
+`heroku create`
+
+`git remote add heroku <heroku_git_name>`
+
+`git push heroku`
+
+`heroku open`
