@@ -68,6 +68,7 @@ cebM_ZAM = TransitLine.create(name: "Cebu Pacific Manila - Zamboanga", kind: "Ai
 aaM_PPS = TransitLine.create(name: "Air Asia Manila - Puerto Princesa", kind: "Airplane", status: "Full Operation", restrictions: "None",
 avg_price: 1500, operating_hours: "5AM - 12AM", reliability: "9.0", start_time: "5AM", close_time: "12AM")
 
+# FX SM Fairview - SM North
 
 # List of Transit Stops
 cs = TransitStop.create(name: "Cubao Southbound", kind: "Bus Terminal", latitude: 14.631, longitude: 121.045)
@@ -108,6 +109,7 @@ smNorth = TransitStop.create(name: "SM North EDSA", kind: "Jeep Stop", latitude:
 staRosa = TransitStop.create(name: "Santa Rosa", kind: "Transport Terminal", latitude: 14.293842, longitude: 121.103861)
 uptc = TransitStop.create(name: "UP Town Center", kind: "Transport Terminal", latitude: 14.651381, longitude: 121.074686)
 smMakati = TransitStop.create(name: "SM Makati", kind: "Bus Stop", latitude: 14.550238, longitude: 121.026374 )
+regaladoFairview = TransitStop.create(name: "Regalado Bus Stop", kind: "Bus Stop", latitude: 14.706332, longitude: 121.069363)
 glorietta = TransitStop.create(name: "Glorietta", kind: "Bus Terminal", latitude:14.551231, longitude: 121.026483)
 
 clark = TransitStop.create(name: "Clark International Airport", kind: "International Airport", latitude:15.18583333, longitude: 120.55972222)
@@ -115,7 +117,7 @@ gensan = TransitStop.create(name: "General Santos International Airport", kind: 
 iloilo = TransitStop.create(name: "Iloilo International Airport", kind: "International Airport", latitude:10.83277778, longitude: 122.4933333)
 kalibo = TransitStop.create(name: "Kalibo International Airport", kind: "International Airport", latitude:11.67916667, longitude: 122.37583333)
 laoag = TransitStop.create(name: "Laoag International Airport", kind: "International Airport", latitude:18.17055556, longitude: 120.53194444)
-naia = TransitStop.create(name: "Ninoy Aquino National Airport International Airport (NAIA)", kind: "International Airport", latitude:18.17055556, longitude: 120.53194444)
+naia = TransitStop.create(name: "Ninoy Aquino International Airport (NAIA)", kind: "International Airport", latitude:14.50833333, longitude: 121.01972222)
 puerto = TransitStop.create(name: "Puerto Princesa International Airport", kind: "International Airport", latitude:9.74194444, longitude: 118.75888889)
 zamboanga = TransitStop.create(name: "Zamboanga International Airport", kind: "International Airport", latitude:6.92222222, longitude: 122.05972222)
 legazpi = TransitStop.create(name: "Legazpi Airport", kind: "Airport", latitude:13.15694444, longitude: 123.74611111)
